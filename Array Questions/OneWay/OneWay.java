@@ -14,6 +14,47 @@ pale. bake -> false
 */
 
 public class OneWay{
+
+    public static Boolean oneWay(String changed, String primary) {
+        if(changed.length() == primary.length()){
+            int changes_count = isequal(changed, primary);
+            if(changes_count==1){
+                return true;
+            }else{
+                return false;
+            }
+            // return !isequal(changed, primary);
+        }else{
+            return true;
+        }
+    }
+
+    public static int isequal(String changed, String primary) {
+        int count_changes = 0; 
+        for(int i=0; i<changed.length(); i++){
+            if(primary.charAt(i)!=changed.charAt(i)){
+                count_changes++;
+            }
+        }
+        return count_changes;
+    }
+
+    public static void main(String[] args) {
+        String changed[] = {"abc", "pales", "pale", "pale"};
+        String primary[] = {"abcd", "pale", "bale", "bake"};
+
+        for (int i=0; i<changed.length; i++){
+            if (oneWay(changed[i], primary[i])){
+                System.out.println(changed[i]+", "+primary[i]+"-> true");
+            }else{
+                System.out.println(changed[i]+", "+primary[i]+"-> false");
+            }
+        }
+    }
+}
+
+
+/*
     public static Boolean isInserted(String changed, String primary) {
         if(changed.length() == primary.length()+1){
             return true;
@@ -42,29 +83,4 @@ public class OneWay{
             return false;
         }
     }
-
-    public static int isequal(String changed, String primary) {
-        int count_changes = 0; 
-        for(int i=0; i<changed.length(); i++){
-            if(primary.charAt(i)!=changed.charAt(i)){
-                count_changes++;
-            }
-        }
-        return count_changes;
-    }
-
-    public static void main(String[] args) {
-        // String changed[] = {"pale", "pales", "pale", "pale"};
-        // String primary[] = {"ple", "pale", "bale", "bake"};
-        String changed[] = {"abc", "pales", "pale", "pale"};
-        String primary[] = {"abcd", "pale", "bale", "bake"};
-
-        for (int i=0; i<changed.length; i++){
-            if (isInserted(changed[i], primary[i]) || isDeleted(changed[i], primary[i]) || isReplaced(changed[i], primary[i])){
-                System.out.println(changed[i]+", "+primary[i]+"-> true");
-            }else{
-                System.out.println(changed[i]+", "+primary[i]+"-> false");
-            }
-        }
-    }
-}
+*/
