@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ArraySort {
@@ -6,6 +7,33 @@ public class ArraySort {
     // for 13 element of array it is taking 40 secs which is not efficient, in this case arraySortV1 is better.
 
     // QUICK TIP : Do not go for 2 level recursion or nested recursion, it drains
+
+    public static ArrayList<Integer> insert(ArrayList a, int temp) {
+        if(a.size()==0 || (int)a.get(a.size()-1)<=temp){
+            a.add(temp);
+            return a;
+        }
+        
+        
+        int val = (int)a.get(a.size()-1);
+        a.remove(a.size()-1);
+        insert(a, temp);
+        a.add(val);
+        // System.out.println(a);
+        return a;
+    }
+
+    public static ArrayList<Integer> sortArrayYash(ArrayList a) {
+        if(a.size() == 1){
+            return a;
+        }
+        int temp = (int)a.get(a.size()-1);
+        // System.out.println(temp);
+        a.remove(a.size()-1);
+        sortArrayYash(a);
+        return insert(a, temp);
+
+    }
 
     public static int[] sortArrayV1(int a[], int i) {
 
@@ -19,7 +47,6 @@ public class ArraySort {
          * Total time : 1 milisecond
          * Total time : 162 microsecond
          * Total time : 1620 nanosecond
-
          */
 
         if (a.length - 1 == i) {
@@ -74,9 +101,20 @@ public class ArraySort {
             input[i] = input.length-i;
         }
 
+        ArrayList inpt = new ArrayList<Integer>();
+        inpt.add(5);
+        inpt.add(1);
+        inpt.add(2);
+        inpt.add(4);
+        inpt.add(6);
+
+        System.out.println("Input - "+inpt);
+
+        
         // System.out.println(Arrays.toString(input));
         long startTime = System.nanoTime();
-        System.out.println(Arrays.toString(sortArrayV1(input, 0)));
+        System.out.println("Output - "+sortArrayYash(inpt));
+        // System.out.println(Arrays.toString(sortArrayV1(input, 0)));
         // System.out.println(Arrays.toString(sortArrayV2(input, 0, 0)));
         long endTime = System.nanoTime();
 
