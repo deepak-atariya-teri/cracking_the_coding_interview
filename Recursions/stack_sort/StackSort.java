@@ -3,52 +3,50 @@ import java.util.Stack;
 
 public class StackSort {
 
-    public static void sortStack(Stack stack) {
-        for (int i = 0; i < stack.size()-1; i++) {
-            for (int j = stack.size()-1; j > 1; j--) {
-                int num1 = (int)stack.get(j);
-                int num2 = (int)stack.get(j-1);
-                if (num1 > num2) {
-                    int times = (stack.size() - j - 1 ) + 2;
-                    int temp[] = new int[times];
-                    // poping 
-                    for (int k = 0; k <times ; k++) {
-                        temp[k] = (int)stack.pop();
-                    }
-                    if(temp.length>2){
-                        int ln = temp.length;
-                        int tmp = temp[temp.length-1];
-                        temp[temp.length-1] = temp[temp.length-1]; 
-                        temp[temp.length-2] = tmp; 
-                    }
-                    
-                    // pushing
-                    for (int k = times-1; k >=0 ; k--) {
-                        stack.push(temp[k]);
-                    }
-                    System.out.println(Arrays.toString(temp));     
-                }
-            }
-            
-            // System.out.println("output "+stack);
-        }
 
+
+    public static Stack<Integer> insert(Stack a, int temp) {
+        
+        if(a.size()==0 || (int)a.peek() <=temp){
+            a.push(temp);
+            return a;
+        }
+        
+        
+        int val = (int)a.peek();
+        a.pop();
+        insert(a, temp);
+        a.push(val);
+
+        System.out.println(a);
+        return a;
     }
 
+    public static Stack<Integer> sortArrayYash(Stack a) {
 
+        if(a.size() == 1){
+            return a;
+        }
+        int temp = (int)a.peek();
+        // System.out.println(temp);
+        a.pop();
+        System.out.println("Array is   "+a+" temp is "+temp);
+        sortArrayYash(a);
+        return insert(a, temp);
+    }
 
     public static void main(String[] args) {
 
         Stack stack = new Stack<Integer>();
-        stack.add(1);
-        stack.add(2);
-        stack.add(3);
         stack.add(4);
+        stack.add(3);
+        stack.add(2);
+        stack.add(1);
         // System.out.println(stack.get(0));
         System.out.println("input "+stack);
 
         long startTime = System.nanoTime();
-        sortStack(stack);
+        System.out.println(sortArrayYash(stack));
         long endTime = System.nanoTime();
 
         long milisecond = (endTime - startTime) / 1000000;

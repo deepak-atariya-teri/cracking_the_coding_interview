@@ -9,6 +9,7 @@ public class ArraySort {
     // QUICK TIP : Do not go for 2 level recursion or nested recursion, it drains
 
     public static ArrayList<Integer> insert(ArrayList a, int temp) {
+        
         if(a.size()==0 || (int)a.get(a.size()-1)<=temp){
             a.add(temp);
             return a;
@@ -19,17 +20,20 @@ public class ArraySort {
         a.remove(a.size()-1);
         insert(a, temp);
         a.add(val);
-        // System.out.println(a);
+
+        System.out.println(a);
         return a;
     }
 
     public static ArrayList<Integer> sortArrayYash(ArrayList a) {
+
         if(a.size() == 1){
             return a;
         }
         int temp = (int)a.get(a.size()-1);
         // System.out.println(temp);
         a.remove(a.size()-1);
+        System.out.println("Array is   "+a+" temp is "+temp);
         sortArrayYash(a);
         return insert(a, temp);
 
@@ -102,11 +106,10 @@ public class ArraySort {
         }
 
         ArrayList inpt = new ArrayList<Integer>();
-        inpt.add(5);
-        inpt.add(1);
-        inpt.add(2);
         inpt.add(4);
-        inpt.add(6);
+        inpt.add(3);
+        inpt.add(2);
+        inpt.add(1);
 
         System.out.println("Input - "+inpt);
 
