@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TowerOfHanio",
+            "request": "launch",
+            "mainClass": "TowerOfHanio",
+            "projectName": "cracking_the_coding_interview_4fc7f66c"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Permutation",
+            "request": "launch",
+            "mainClass": "Permutation",
+            "projectName": "cracking_the_coding_interview_4fc7f66c"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArraySort",
+            "request": "launch",
+            "mainClass": "ArraySort",
+            "projectName": "cracking_the_coding_interview_4fc7f66c"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - RemoveDuplicateFromString",
             "request": "launch",
             "mainClass": "RemoveDuplicateFromString",

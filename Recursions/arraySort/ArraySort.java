@@ -15,13 +15,12 @@ public class ArraySort {
             return a;
         }
         
-        
         int val = (int)a.get(a.size()-1);
         a.remove(a.size()-1);
         insert(a, temp);
         a.add(val);
 
-        System.out.println(a);
+        // System.out.println(a);
         return a;
     }
 
@@ -33,7 +32,7 @@ public class ArraySort {
         int temp = (int)a.get(a.size()-1);
         // System.out.println(temp);
         a.remove(a.size()-1);
-        System.out.println("Array is   "+a+" temp is "+temp);
+        // System.out.println("Array is   "+a+" temp is "+temp);
         sortArrayYash(a);
         return insert(a, temp);
 
@@ -106,10 +105,10 @@ public class ArraySort {
         }
 
         ArrayList inpt = new ArrayList<Integer>();
-        inpt.add(4);
-        inpt.add(3);
-        inpt.add(2);
-        inpt.add(1);
+        inpt.add(4000000);
+        inpt.add(30000);
+        inpt.add(200);
+        inpt.add(1000);
 
         System.out.println("Input - "+inpt);
 
