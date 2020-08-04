@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BinaryTree",
+            "request": "launch",
+            "mainClass": "BinaryTree",
+            "projectName": "cracking_the_coding_interview_4fc7f66c"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SubSet",
+            "request": "launch",
+            "mainClass": "SubSet",
+            "projectName": "cracking_the_coding_interview_4fc7f66c"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - TowerOfHanio",
             "request": "launch",
             "mainClass": "TowerOfHanio",
