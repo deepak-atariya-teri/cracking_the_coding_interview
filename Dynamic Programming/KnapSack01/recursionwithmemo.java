@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 class Knapsack01 {
     
@@ -9,7 +10,7 @@ class Knapsack01 {
         for (int i = 1; i < m.length; i++) {
             for (int j = 1; j < m[i].length; j++) {
                 if (weights[i-1]<=j) {
-                    int cons = values[i-1]+m[i-1][j-1];
+                    int cons = values[i-1]+m[i-1][j-weights[i-1]];
                     int nc = m[i-1][j-1];
                     m[i][j] = cons > nc ? cons : nc;
                 }else{
@@ -19,8 +20,11 @@ class Knapsack01 {
             }
         }
 
-        System.out.println(m[n][w]);
-
+        for (int i = 0; i < m.length; i++) {
+            System.out.println(Arrays.toString(m[i]));
+        }
+        // System.out.println(m[n][w]);
+        
     }
 
 
@@ -45,9 +49,9 @@ class Knapsack01 {
     }
 
     public static void main(String[] args) {
-        int weights[] = { 10, 20, 30 };
+        int weights[] = { 1, 2, 3 };
         int values[] = { 60, 100, 120 };
-        int bag = 50;
+        int bag = 5;
 
         long startTime = System.nanoTime();
         // System.out.println(knapsack01(weights, values, bag, weights.length, new int[weights.length+1][bag+1]));
