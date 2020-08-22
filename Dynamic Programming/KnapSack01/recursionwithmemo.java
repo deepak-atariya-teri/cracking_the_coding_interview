@@ -39,7 +39,8 @@ class Knapsack01 {
         if (weights[n - 1] <= bag) {
             int consider = values[n - 1] + knapsack01(weights, values, bag - weights[n - 1], n - 1, m);
             int nc = knapsack01(weights, values, bag, n - 1, m);
-            m[n][bag] = consider > nc ? consider : nc;
+            // m[n][bag] = consider > nc ? consider : nc;
+            m[n][bag] = consider;
             return m[n][bag];
         } else if (weights[n - 1] > bag) {
             int nc = knapsack01(weights, values, bag, n - 1, m);
@@ -54,8 +55,8 @@ class Knapsack01 {
         int bag = 5;
 
         long startTime = System.nanoTime();
-        // System.out.println(knapsack01(weights, values, bag, weights.length, new int[weights.length+1][bag+1]));
-        topdown(weights, values, bag, weights.length);
+        System.out.println(knapsack01(weights, values, bag, weights.length, new int[weights.length+1][bag+1]));
+        // topdown(weights, values, bag, weights.length);
         long endTime = System.nanoTime();
 
         long milisecond = (endTime - startTime) / 1000000;
