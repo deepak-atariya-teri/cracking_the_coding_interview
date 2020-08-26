@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - EqualSumPartition",
+            "request": "launch",
+            "mainClass": "EqualSumPartition",
+            "projectName": "cracking_the_coding_interview_4fc7f66c"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SubSetSum",
             "request": "launch",
             "mainClass": "SubSetSum",
