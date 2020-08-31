@@ -2,6 +2,7 @@
 #include "stdio.h"
 #include "vector"
 
+
 // vector<int> insert(vector<int> a){
 
 // }
