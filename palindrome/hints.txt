@@ -1,0 +1,4 @@
+1. A palindrome is something which is the same when written forwards and backwards. What if you reversed the linked list? 
+2. Try using a stack
+3. Assume you have the length of the linked list. Can you implement this recursively?
+
